@@ -1,0 +1,47 @@
+{% extends "navegacion.html" %}
+{% block body %}
+<style>
+@-moz-document url-prefix(){
+fieldset{
+display:table-cell;
+}
+}
+</style>
+<div id="main" class="container">
+<h2 style="font-family: Raleway; color: #537098; font-weight: bold; text-align: left">Cuidados</h2>
+
+<div id="tabla1">
+<h3 style="font-family: Raleway; color: #829bbc; text-align:left; font-weight:bold;">Alimentación</h3>
+<table class="table">
+<tr class="active">
+<th>¿Cuál es mi comida dura?</th>
+<th>¿Cuál es mi comida blanda?</th>
+<th>¿Qué y cómo hay que darme de comer?</th>
+</tr>
+{% for c in cuid %}
+<tr>
+<td>{{ c.nombrecomidadura }}</td>
+<td>{{ c.nombrecomidablanda }} </td>
+<td>{{ c.pautasalimentacion }}</td>
+{% endfor %}
+</table>
+</div>
+
+<div id="tabla2">
+<h3 style="font-family: Raleway; color:#829bbc; text-align:left; font-weight:bold;">Higiene</h3>
+<table class="table">
+<tr class="active">
+<th>¿Hay algo que limpiar?</th>
+<th>¿Qué hago para limpiarlo?</th>
+</tr>
+{% for c in cuid %}
+<tr>
+<td>{{ c.tipohigiene }}</td>
+<td>{{ c.pautashigiene }}</td>
+{% endfor %}
+</table>
+</div>
+
+</div>
+{% endblock %}
+

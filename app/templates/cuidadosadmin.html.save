@@ -1,0 +1,29 @@
+{% extends "navegacion.html" %}
+{% block body %} 
+<div id="main" class="container">
+  <form action="{{ url_for('cuidadosadmin') }}" method=post class="form-horizontal">
+    {{ form.hidden_tag() }}
+
+     
+    {{ form.nombrecuidados.label }}
+    {{ form.nombrecuidados }}
+     
+    {{ form.nombrecomidadura.label }}
+    {{ form.nombrecomidadura }}
+     
+    {{ form.nombrecomidablanda.label }}
+    {{ form.nombrecomidablanda }}
+     
+    {{ form.pautasalimentacion.label }}
+    {{ form.pautasalimentacion }}
+	     
+    {{ form.tipohigiene.label }}
+    {{ form.tipohigiene }}
+	
+    {{ form.pautashigiene.label }}
+    {{ form.pautashigiene }}
+     
+    {{ form.submit }}
+  </form>
+</div>   
+{% endblock %}

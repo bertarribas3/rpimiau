@@ -1,0 +1,41 @@
+{% extends "navegacion.html" %} {% block body %} 
+{% if g.user.is_authenticated()%}
+<div id="main" class="container" style="text-align:center">
+<div id="divcam1" style="display:block"><img src="http://192.168.1.150:8081/" class="img-responsive center-block img-thumbnail" style="width:352; height:288"></div>
+<div id="divcam2" style="display:none"><img src="http://192.168.1.150:8082/" class="img-responsive center-block img-thumbnail" style="width:352; height:288"></div>
+</div>
+<div id="btnCam2" class="container" style="text-align:center; margin-top:25px;">
+<img id="cam1" class="img-responsive" src="{{ url_for('static', filename='images/viendo_salon.png') }}" style="opacity:0.5; margin-right:5px;"></img>
+<img id="cam2" class="img-responsive" src="{{ url_for('static', filename='images/play_habitac.png') }}" style="margin-left:5px"></img>
+</div>
+{% endif %}
+<script>
+$(document).ready(function() {
+$("#cam2").click(function() {
+	$("#divcam2").css('display','block');
+	$("#divcam1").css('display','none');
+	$("#cam2").prop("disabled",true);
+	$("#cam2").css('opacity',0.5);
+	$("#cam2").attr('src','{{ url_for('static', filename='images/viendo_habitac.png') }}');
+	$("#cam2").css('cursor','default');
+	$("#cam1").attr('disabled', false);
+	$("#cam1").attr('src','{{ url_for('static', filename='images/play_salon.png') }}');
+	$("#cam1").css('opacity',1);
+	$("#cam1").css('cursor','pointer');
+});
+$("#cam1").click(function() {
+	$("#divcam1").css('display','block');
+	$("#divcam2").css('display','none');
+	$("#cam1").prop("disabled",true);
+	$("#cam1").attr('src','{{ url_for('static', filename='images/viendo_salon.png') }}');
+	$("#cam1").css('opacity',0.5);
+	$("#cam1").css('cursor','default');
+	$("#cam2").prop("disabled", false);
+	$("#cam2").attr('src','{{ url_for('static', filename='images/play_habitac.png') }}');
+	$("#cam2").css('opacity',1);
+	$("#cam2").css('cursor','pointer');
+});
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "navegacion.html" %}
+
+{% block body %}
+<div id="main" class="container">
+<img src="{{ url_for('static', filename='images/errores.png') }}" alt="500" class="img-responsive center-block">
+<h1 id="ups" style="font-family: Raleway; color: #537098; font-weight:bold;">¡¡UPS!!</h1>
+<h2 id="msg500" style="font-family: Raleway; color: #829bbc;">¡Aquí no es!</h2>
+</div>
+{% endblock %}
+

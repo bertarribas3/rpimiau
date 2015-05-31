@@ -1,0 +1,55 @@
+{% extends "navegacion.html" %}
+{% block body %}
+<style>
+@-moz-document url-prefix()
+{
+fieldset{ display:table-cell;}
+}
+a[href^="tel:"]:before {
+content: "\260E";
+display: inline-block;
+margin-right: 0.5em;
+}
+a:hover {
+text-decoration:none;
+}
+</style>
+<div id="main" class="container">
+<h2 style="font-family: Raleway; color: #537098; font-weight: bold; text-align: left">Primeros Auxilios</h2>
+<div id="tabla1">
+<h3 style="font-family: Raleway; color: #829bbc; text-align:left; font-weight:bold;">Veterinario</h3>
+{% for p in prim %}
+<div style="text-align:center;margin-bottom:10px">
+<p style="font-family:Raleway;color: tomato;  font-size:150%;font-weight:bold;display:inline-block">URGENCIAS:&nbsp </p>
+<a href="tel:{{ p.tlfnourgencias }}" style="font-family: sans-serif; font-size:150%; color: tomato;">{{ p.tlfnourgencias }}</a>
+</div>
+<div style="text-align:center;margin-bottom:10px">
+<p style="font-family:Raleway;color: tomato;  font-size:125%;font-weight:bold;display:inline-block">Teléfono Clínica:&nbsp</p>
+<a href="tel:{{ p.tlfnourgencias }}" style="font-family: sans-serif; font-size:125%; color: tomato;">{{ p.tlfnoveterinario }}</a>
+</div>
+<table class="table">
+<tr class="active">
+<th>Mi veterinario</th>
+<th>Su dirección</th>
+<th>Su email</th>
+</tr>
+ <tr>
+ <td>{{ p.nombreveterinario }}</td>
+ <td>{{ p.direccionveterinario }} </td>
+ <td><a href="mailto: {{ p.emailveterinario }}">{{ p.emailveterinario }}</a></td>
+ </table>
+ </div>
+ <div id="tabla2">
+<h3 style="font-family: Raleway; color: #829bbc; text-align:left; font-weight:bold;">Tratamiento</h3> <table class="table"> 
+<tr class="active">
+ <th>¿Qué tengo que tomar?</th>
+ <th>¿Cuándo y cómo?</th>
+ </tr>
+ <tr>
+ <td></td>
+<td></td>
+ {% endfor %}
+ </table>
+ </div>
+ </div>
+ {% endblock %}

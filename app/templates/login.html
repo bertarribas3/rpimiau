@@ -1,0 +1,89 @@
+<!doctype html>
+<title>MiauWatcher</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<style>
+
+@font-face {
+  font-family: 'Always';
+  src: url({{ url_for('static', filename='fonts/always.eot') }}); 
+  src: url({{ url_for('static', filename='fonts/always.woff2') }}),
+       url({{ url_for('static', filename='fonts/always.woff') }}),
+       url({{ url_for('static', filename='fonts/always.ttf') }})
+}
+
+#nombreusuario::-webkit-input-placeholder { font-style: italic; }
+#nombreusuario::-ms-input-placeholder { font-style: italic; }
+#nombreusuario::-moz-placeholder { font-style: italic; }
+#contrasena::-webkit-input-placeholder { font-style: italic; }
+#contrasena::-ms-input-placeholder { font-style: italic; }
+#contrasena::-moz-placeholder { font-style: italic; }
+
+#btnLogin {
+font-family: Always;
+border-style:none;
+border-radius: 0;
+padding: 0 40px 0 28px;
+font-size: 250%;
+margin-top: 2%;
+background:#dc1b6c;
+}
+
+#btnLogin:focus {
+background: #a70f4f;
+}
+#btnLogin:hover {
+background: #a70f4f;
+}
+
+#nombreApp {
+font-family: Always;
+color: #537098;
+text-align: center;
+margin-top:0px;
+font-size:450%;
+}
+
+#divbtnsubmit {
+margin-top: 1%;
+}
+
+</style>
+<link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="shortcut icon">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='fonts/Always.ttf') }}"></script>
+<script src="{{ url_for('static', filename='jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+
+<body>
+<div id="main" class="container">
+    <img src="{{ url_for('static', filename='images/cat_laptop.png') }}" alt="Login" class="img-responsive center-block">
+    <h1 id="nombreApp">Miau Watcher</h1>
+  <form action="" method=post class="form-horizontal" style="text-align: center">
+        <div class="form-group">
+                <div style="width: 276px !important; margin: 0 auto; float: none;">
+			<div class="input-group input-medium">
+			<span class="input-group-addon"><i class="fa fa-github-alt fa-lg fa-fw"></i></span>
+                        <input type="text" class="form-control input-lg" id="nombreusuario" name="nombreusuario" placeholder="Nombre" required>
+			</div>
+               </div>
+        </div>
+    	<div class="form-group">
+       		<div style="width: 276px !important; margin: 0 auto; float: none;" >
+       			<div class="input-group input-medium">
+			<span class="input-group-addon"><i class="fa fa-paw fa-lg fa-fw"></i></span>
+          		<input type="password" id="contrasena" name="contrasena" class="form-control input-lg" placeholder="Contraseña" required>
+        		</div>
+		</div>
+    	</div>
+    <div class="form-group">
+        <div id="divbtnsubmit">
+         <button type="submit" id="btnLogin" class="btn btn-primary btn-lg">Entra</button>
+        </div>
+    </div>
+  </form>
+</div>
+</body>
+

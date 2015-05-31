@@ -1,0 +1,147 @@
+/*******FUENTES*********/
+@font-face {
+font-family: 'Always';
+src: url({{ url_for('static', filename='fonts/always.eot') }});
+src: url({{ url_for('static', filename='fonts/always.woff2') }}),
+     url({{ url_for('static', filename='fonts/always.woff') }}),
+     url({{ url_for('static', filename='fonts/always.ttf') }})
+}
+@font-face {
+font-family: 'Raleway';
+src: url({{ url_for('static', filename='fonts/raleway.eot') }});
+src: url({{ url_for('static', filename='fonts/raleway.woff2') }}),
+     url({{ url_for('static', filename='fonts/raleway.woff') }}),
+     url({{ url_for('static', filename='fonts/raleway.ttf') }})
+}
+/**********BARRA DE NAVEGACIÓN**********/
+/*Titulo de la aplicacion en navbar*/
+#nombreapp {
+font-family: Always;
+color: white;
+font-size: 300%;
+padding-top: 25px;
+padding-left: 5px !important;
+}
+/*Color del navigation bar*/
+.container-fluid {
+background-color: #537098;
+}
+
+
+/*Color del icono de salir*/
+.fa {
+color: white;
+}
+/*Icono de salir*/
+.salir {
+clear: both;
+margin-right: 10px !important;
+margin-top: 7px !important;
+}
+/*Lista en navigation bar*/
+ul {
+list-style-type: none;
+overflow: hidden;
+padding: 0;
+}
+/*Icono de salir*/
+i {
+float: right !important;
+padding-top: 20px;
+}
+/******ICONOS MENU*********/
+/* Secciones iconos menu  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+/*Configuración de columnas iconos menu*/
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*Agrupacion para iconos menu*/
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*Rejilla de dos*/
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 49.2%;
+}
+/*Sobreescritura de img-responsive para menu de iconos*/
+.img-responsive {
+display: inline-block !important;
+}
+/*******BOTONES MENÚ********/
+.btnMenu:hover {
+opacity: 0.7;
+}
+/*******STREAMING*****/
+#cam2, #cam1 {
+font-family: Raleway;
+border-style:none;
+border-radius: 0;
+background:#dc1b6c;
+}
+
+/******PLACEHOLDERS******/
+#nombrecuidador::-webkit-input-placeholder { font-style: italic; }
+#nombrecuidador::-ms-input-placeholder { font-style: italic; }
+#nombrecuidador::-moz-placeholder { font-style: italic; }
+#fechainiciocuidado::-webkit-input-placeholder { font-style: italic; }
+#fechainiciocuidado::-ms-input-placeholder { font-style: italic; }
+#fechainiciocuidado::-moz-placeholder { font-style: italic; }
+#fechafincuidado::-webkit-input-placeholder { font-style: italic; }
+#fechafincuidado::-ms-input-placeholder { font-style: italic; }
+#fechafincuidado::-moz-placeholder { font-style: italic; }
+#nombrecomidadura::-webkit-input-placeholder { font-style: italic; }
+#nombrecomidadura::-ms-input-placeholder { font-style: italic; }
+#nombrecomidadura::-moz-placeholder { font-style: italic; }
+#nombrecomidablanda::-webkit-input-placeholder { font-style: italic; }
+#nombrecomidablanda::-ms-input-placeholder { font-style: italic; }
+#nombrecomidablanda::-moz-placeholder { font-style: italic; }
+#pautasalimentacion::-webkit-input-placeholder { font-style: italic; }
+#pautasalimentacion::-ms-input-placeholder { font-style: italic; }
+#pautasalimentacion::-moz-placeholder { font-style: italic; }
+#tipohigiene::-webkit-input-placeholder { font-style: italic; }
+#tipohigiene::-ms-input-placeholder { font-style: italic; }
+#tipohigiene::-moz-placeholder { font-style: italic; }
+#pautashigiene::-webkit-input-placeholder { font-style: italic; }
+#pautashigiene::-ms-input-placeholder { font-style: italic; }
+#pautashigiene::-moz-placeholder { font-style: italic; }
+
+textarea {
+resize: none;
+}
+
+/****PARA QUE NO SE QUEDE DETRÁS DEL NAVBAR FIXED****/
+body {
+padding-top:80px;
+}
+
+#submit {
+font-family: Raleway;
+border-style:none;
+border-radius: 0;
+padding: 0 40px 0 28px;
+font-size: 150%;
+margin-top: 2%;
+background:#dc1b6c;
+color: white;
+font-size: bold;
+}
+
+@media screen and (max-width:480px) {
+#mainMenu {
+margin-top: 10%;
+}
+}

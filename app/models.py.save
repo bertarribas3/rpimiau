@@ -1,0 +1,66 @@
+from app import db
+
+class User(db.Model):
+    __tablename__ = "usuarios"
+    id = db.Column('id_usuario',db.Integer, primary_key=True)
+    nombreusuario = db.Column('nombreusuario',db.String(64), index=True, unique=True)
+    contrasena = db.Column('contrasena',db.String(10), index=True, unique=True)
+
+    def __init__(self, nombreusuario, contrasena):
+        self.nombreusuario = nombreusuario
+	self.contrasena = contrasena
+
+    def is_authenticated(self):
+        return True
+ 
+    def is_active(self):
+        return True
+ 
+    def is_anonymous(self):
+        return False
+ 
+    def get_id(self):
+        return unicode(self.id)
+ 
+    def __repr__(self):
+        return '<User %r>' % (self.nombreusuario)
+
+
+class Cuidados(db.Model):
+    __tablename__ = "cuidados"
+    id = db.Column('id_cuidados',db.Integer, primary_key=True)
+    fechainiciocuidado = db.Column('fechainiciocuidado', db.DateTime, index=True, unique=True)
+    fechafincuidado = db.Column('fechafincuidado', db.DateTime, index=True, unique=True)
+    nombrecuidador = db.Column('nombrecuidador
+', db.String(20), index=True, unique=True)
+    nombrecomidadura = db.Column('nombrecomidadura', db.String(20), index=True, unique=True)
+    nombrecomidablanda = db.Column('nombrecomidablanda',db.String(20), index=True, unique=True)
+    pautasalimentacion = db.Column('pautasalimentacion', db.String(300), index=True, unique=True)
+    tipohigiene = db.Column('tipohigiene', db.String(20), index=True, unique=True)
+    pautashigiene = db.Column('pautashigiene', db.String(300), index=True, unique=True)
+
+    def __repr__(self):
+        return '<Cuidados %r>' % (self.nombrecuidados)
+
+class Veterinario(db.Model):
+    __tablename__ = "veterinario"
+    id = db.Column('id_veterinario', db.Integer, primary_key=True)
+    nombreveterinario = db.Column('nombreveterinario',db.String(10), index=True, unique=True)
+    apellveterinario = db.Column('apellveterinario', db.String(20), index=True, unique=True)
+    tlfnoveterinario = db.Column('tlfnoveterinario', db.Integer, index=True, unique=True)
+    tlfnourgencias = db.Column('tlfnourgencias', db.Integer, index=True, unique=True)
+    direccionveterinario = db.Column('direccionveterinario', db.String(100), index=True, unique=True)
+    emailveterinario = db.Column('emailveterinario', db.String(30), index=True, unique=True)
+
+    def __repr__(self):
+        return '<Veterinario %r>' % (self.nombreveterinario)
+
+class Tratamiento(db.Model):
+    __tablename__ = 'tratamiento'
+    id = db.Column('id_tratamiento', db.Integer, primary_key=True)
+    nombremedicamento = db.Column('nombremedicamento', db.String(20), index=True, unique=True)
+    posologiamedicamento = db.Column('posologiamedicamento', db.String(100), index=True, unique=True)
+
+    def __repr__(self):
+        return '<Tratamiento %r>' % (self.nombremedicamento)
+

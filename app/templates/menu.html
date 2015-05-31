@@ -1,0 +1,29 @@
+{% extends "navegacion.html" %} {% block body %} 
+<div id="mainMenu" class="container">
+<div class="section group">
+	<div class="col span_1_of_2" style="text-align:right">
+	<a href="{{ url_for('streaming') }}"><img src="{{ url_for('static', filename='images/en_directo_web.png') }}" class="img-responsive btnMenu" /></a>
+	</div>
+	<div class="col span_1_of_2">
+	<a href="{{ url_for('enconstruccion') }}"><img src="{{ url_for('static', filename='images/ultimas_noticias_web.png') }}" class="img-responsive btnMenu" /></a>
+	</div>
+</div>
+<div style=" height: 20px;"></div>
+<div class="section group">
+	<div class="col span_1_of_2"  style="text-align:right">
+	{% if g.user.nombreusuario == 'berta' %}
+	<a href="{{ url_for('primerosauxadmin') }}"><img src="{{ url_for('static', filename='images/primeros_auxilios_web.png') }}" class="img-responsive btnMenu" /></a>
+	{% else %}
+        <a href="{{ url_for('primerosauxusuario') }}"><img src="{{ url_for('static', filename='images/primeros_auxilios_web.png') }}" class="img-responsive btnMenu" /></a>
+	{% endif %}
+        </div>
+	<div class="col span_1_of_2">
+	{% if g.user.nombreusuario == 'berta' %}
+	<a href="{{ url_for('cuidadosadmin') }}"><img src="{{ url_for('static', filename='images/cuidados_web.png') }}" class="img-responsive btnMenu" /></a>
+        {% else %}
+	<a href="{{ url_for('cuidadosusuario') }}"><img src="{{ url_for('static', filename='images/cuidados_web.png') }}" class="img-responsive btnMenu" /></a>        
+	{% endif %}
+	</div>
+</div>
+</div>
+{% endblock %}

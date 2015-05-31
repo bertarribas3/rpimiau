@@ -1,0 +1,55 @@
+{% extends "navegacion.html" %}
+{% block body %} 
+
+<div id="main" class="container" style="text-align:center; width:80%;">
+
+<h2 id="h2cuidados" style="font-family: Raleway;color: #537098;font-weight:bold;text-align:left">Cuidados</h2>
+
+<form action="{{ url_for('cuidadosadmin') }}" method=post class="form-vertical">
+   {{ form.hidden_tag() }}
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.nombrecuidador(class_='form-control',placeholder='¿Quién se queda conmigo?') }}
+	</div>
+</div>
+<div style="height=5px"> </div>
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-cutlery fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.nombrecomidadura(class_='form-control',placeholder='¿Qué comida dura como?') }}
+	</div>
+</div>
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-spoon fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.nombrecomidablanda(class_='form-control',placeholder='¿Qué comida blanda como?') }}
+	</div>
+</div>
+
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-question fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.pautasalimentacion(class_='form-control',placeholder='¿Cuánto tengo que comer?') }}
+	</div>
+</div>
+
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-hdd-o fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.tipohigiene(class_='form-control',placeholder='¿Qué se limpia?') }}
+	</div>
+</div>
+
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-question fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.pautashigiene(class_='form-control',placeholder='¿Cómo se limpia?') }}
+	</div>
+</div>
+    {{ form.submit }}
+</form>
+
+</div> 
+
+{% endblock %}

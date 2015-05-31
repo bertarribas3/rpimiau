@@ -1,0 +1,47 @@
+<!doctype html>
+<title>MiauWatcher</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="utf-8">
+<style>
+@font-face {
+font-family: 'Always';
+src: url({{ url_for('static', filename='fonts/always.eot') }});
+src: url({{ url_for('static', filename='fonts/always.woff2') }}),
+     url({{ url_for('static', filename='fonts/always.woff') }}),
+     url({{ url_for('static', filename='fonts/always.ttf') }})
+}
+@font-face {
+font-family: 'Raleway';
+src: url({{ url_for('static', filename='fonts/raleway.eot') }});
+src: url({{ url_for('static', filename='fonts/raleway.woff2') }}),
+     url({{ url_for('static', filename='fonts/raleway.woff') }}),
+     url({{ url_for('static', filename='fonts/raleway.ttf') }})
+}
+</style>
+<link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="shortcut icon">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='navegacion.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='jquery.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<ul>
+			<li><a href="{{ url_for('index') }}"><p id="nombreapp" class="navbar-brand">Miau Watcher</p> </li></a>
+			<li> {% if g.user.is_authenticated()%}
+                    	<a href="{{ url_for('logout') }}"><i class="fa fa-sign-out fa-2x"></i></a>
+                	{% endif %}</li>
+			<li>{% if g.user.nombreusuario == 'berta' %}
+                        <a href="{{ url_for('enconstruccion') }}"><i class="fa fa-user-plus fa-2x" style="padding-right:10px"></i></a>
+                        {% endif %}</li>
+
+		</ul>
+		
+	</div>
+</nav>
+    {% block body %}{% endblock %}
+    <footer id="footer"> </footer>
+</div>
+

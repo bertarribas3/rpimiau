@@ -1,0 +1,25 @@
+{% extends "navegacion.html" %}
+{% block body %}
+<div id="main" class="container">
+    <h2>All Items</h2>
+    <table class="table table-hover">
+      <tr>
+        <th>#
+        <th>Title
+        <th>Date
+        <th>Text
+      {%- for u in usuario %}
+      <tr>
+        <td><a href="#">{{ u.id }}</a>
+        <td>{{ u.nombreusuario }}
+        <td>Hola
+        <td>a ver si sale</td>
+      {%- endfor %}
+    </table>
+    <p>
+      <a href="#">New Todo</a>
+
+  
+</div>
+{% endblock %}
+

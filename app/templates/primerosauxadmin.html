@@ -1,0 +1,50 @@
+{% extends "navegacion.html" %}
+{% block body %} 
+
+<div id="main" class="container" style="text-align:center; width:80%;">
+
+<h2 style="font-family: Raleway;color: #537098;font-weight:bold;text-align:left">Primeros auxilios</h2>
+
+<form action="{{ url_for('primerosauxadmin') }}" method=post class="form-vertical">
+   {{ form.hidden_tag() }}
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-user-md fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.nombreveterinario(class_='form-control',placeholder='Nombre de mi veterinario') }}
+	</div>
+</div>
+<div style="height=5px"> </div>
+
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-phone fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.tlfnoveterinario(class_='form-control',placeholder='¿Cuál es su teléfono?') }}
+	</div>
+</div>
+
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-mobile-phone fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.tlfnourgencias(class_='form-control',placeholder='¿Y el teléfono de urgencias?') }}
+	</div>
+</div>
+
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.direccionveterinario(class_='form-control',placeholder='¿Su dirección?') }}
+	</div>
+</div>
+
+<div class="form-group">    
+	<div class="input-group input-medium">
+	<span class="input-group-addon"><i class="fa fa-envelope fa-lg fa-fw" style="padding-top:0 !important; color:#a0bbdf"></i></span>    
+	{{ form.emailveterinario(class_='form-control',placeholder='¿Y su email?') }}
+	</div>
+</div>
+    {{ form.submit }}
+</form>
+
+</div> 
+
+{% endblock %}
